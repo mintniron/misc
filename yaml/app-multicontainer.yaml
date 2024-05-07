@@ -1,0 +1,17 @@
+---
+apiVersion: v1
+kind: Pod
+metadata:
+  name: myapp-multicontainer
+spec:
+  containers:
+    - name: frontend
+      image: frontend-image:latest
+      ports:
+        - containerPort: 80
+    - name: backend
+      image: backend-image:latest
+      ports:
+        - containerPort: 8080
+    - name: database
+      image: database-image:latest
