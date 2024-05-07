@@ -1,0 +1,17 @@
+---
+apiVersion: batch/v1beta1
+kind: CronJob
+metadata:
+  name: myapp-cronjob
+spec:
+  schedule: "*/5 * * * *"
+  jobTemplate:
+    spec:
+      template:
+        spec:
+          containers:
+            - name: myapp-container
+              image: myapp:latest
+              command:
+                - myapp-script.sh
+          restartPolicy: OnFailure
