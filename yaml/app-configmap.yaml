@@ -1,0 +1,11 @@
+---
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: myapp-configmap
+data:
+  app.properties: |
+    # Configuration properties for MyApp
+    app.name=MyApp
+    app.version=1.0
+    app.environment=production
